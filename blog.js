@@ -20,13 +20,13 @@
         var h = "chead"+(i+1).toString();
         var c = "content"+(i+1).toString();
         var s = "span"+(i+1).toString();
-        
+
         document.getElementById(c).innerHTML = obj[i].content;
         document.getElementById(im).src = obj[i].imageUrl;
         document.getElementById(h).innerHTML=obj[i].title;
         document.getElementById(s).innerHTML = obj[i].id;
-       // 
-        
+       //
+
 
       }
 }
@@ -48,7 +48,7 @@
   }
   }
   var js;
-  
+
 
   function login(){
     var u = document.getElementById("sign").user.value;
@@ -78,7 +78,7 @@
     var jObject = JSON.parse(localStorage.getItem("us"));
     for(i in jObject)
     {
-      
+
       if(jObject[i].username == document.getElementById("log").user.value && jObject[i].password == document.getElementById("log").pass.value)
       {
           s=true;
@@ -87,13 +87,14 @@
 
     if(s)
     {
-      
+
       document.getElementById("sbutton").style.display = "none";
       document.getElementById("lbutton").style.display = "none";
       document.getElementById("logout").style.display = "block";
+      document.getElementById("name").innerHTML = document.getElementById("log").user.value;
+      document.getElementById("name").style.display = "block";
 
 //sbutton
-        alert("Login Successful!!");
       return true;
     }
     else
@@ -108,6 +109,7 @@
       document.getElementById("sbutton").style.display = "block";
       document.getElementById("lbutton").style.display = "block";
       document.getElementById("logout").style.display = "none";
+      document.getElementById("name").style.display = "none";
 
   }
 ///</script>
@@ -123,17 +125,17 @@
 
         obj=JSON.parse(this.responseText);
         console.log(obj);
-        
+
         document.getElementById("head").innerHTML = obj.title;
         document.getElementById("image").src = obj.imageUrl;
         document.getElementById("content").innerHTML=obj.content;
        // document.getElementById(s).innerHTML = obj[i].id;
- 
+
 }
   }
     xhttp.open("POST","http://www.koushikmln.com:7500/blogs/getBlog",true);
     xhttp.setRequestHeader("Content-type", "application/JSON");
   xhttp.send(JSON.stringify(s));
 
-    
+
   //</script>
