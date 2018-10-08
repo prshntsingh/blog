@@ -25,3 +25,7 @@ uncle(X,Y):- parent(A,Y), brother(X,A).
 aunt(X,Y):- parent(A,Y), sister(X,A).
 grandson(X,Y):- parent(A,X), parent(Y,A), male(X).
 grandaughter(X,Y):- parent(A,X), parent(Y,A), female(X).
+
+
+
+%this is a sample code of AI lab bit mesra
